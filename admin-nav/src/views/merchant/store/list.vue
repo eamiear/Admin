@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    Store list
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    Brand publish
   </div>
 </template>
 
