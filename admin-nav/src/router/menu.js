@@ -11,13 +11,13 @@ export const operatorMenus = [
 export const merchantMenus = [
   {
     name: '商铺库',
-    path: '/operator/shops/projectList.html'
+    path: '/merchant/store/list.html'
   }, {
     name: '品牌库',
-    path: '/operator/usercenter/password.html'
+    path: '/merchant/brand/list.html'
   }, {
     name: '发布品牌',
-    path: '/operator/usercenter/password.html'
+    path: '/merchant/brand/publish.html'
   }, {
     name: '个人中心',
     path: '/operator/usercenter/password.html'

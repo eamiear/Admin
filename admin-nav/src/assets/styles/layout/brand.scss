@@ -13,8 +13,10 @@
   font-weight: 300;
   overflow: hidden;
 
+  &:hover, &:active, &:visited{
+    color: #000;
+  }
   &:hover{
-    color: #333;
     font-weight: 600;
   }
 
