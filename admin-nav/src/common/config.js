@@ -1,11 +1,16 @@
-/**
- * @author skz
+/*
+ * @Author: eamiear
+ * @Date: 2019-02-19 10:38:23
+ * @Last Modified by: eamiear
+ * @Last Modified time: 2019-02-19 10:40:18
  */
-// 该配置仅用于本地开发环境
-// 默认接口 api， 如要连接本地Tomcat接口服务，修改为本机服务连接即可
+
 const config = {
   dev: {
     baseApi: 'https://easy-mock.com/mock/5c5ae3f128e4ba5d7fa300eb/mip/'
+  },
+  prod: {
+    baseApi: ''
   }
 }
 export default config

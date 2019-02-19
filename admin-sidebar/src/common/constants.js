@@ -32,26 +32,7 @@ export const TOKEN_RENEW = 99950007 // 令牌续约
 
 // 客户端|平台类型
 export const CLIENT_TYPES = {
-  // 优托邦
-  UTOPA: 1,
-  // 小Q
-  LITTLEQ: 2,
-  // liber
-  LIBER: 3,
-  // 设计师
-  DESIGNER: 4,
-  // 运营平台
-  OPERATION_PLATFORM: 5,
-  // 优托邦商家端APP
-  UTOPA_MERCHANT: 6,
-  // 小Q商家端APP
-  XIAOQ_MERCHANT: 7,
-  // 优托邦智能楼宇平台
-  INTEL_BUILDING_PLATFORM: 8,
-  // crm平台
-  CRM: 9,
-  // 招商平台
-  MERCHANTS: 11
+  OPERATION_PLATFORM: 5
 }
 
 // 登录类型
