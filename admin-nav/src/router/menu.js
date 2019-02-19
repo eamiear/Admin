@@ -5,6 +5,14 @@ export const operatorMenus = [
   }, {
     name: '个人中心',
     path: '/operator/usercenter/password.html'
+  }, {
+    name: '配置信息',
+    children: [
+      {
+        name: '系统配置',
+        path: '/operator/usercenter/password.html'
+      }
+    ]
   }
 ]
 

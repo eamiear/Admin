@@ -58,6 +58,11 @@
     border-bottom-width: 1px;
   }
 
+  .el-menu--horizontal > .el-submenu .el-submenu__title{
+    height: $navbar-height;
+    line-height: $navbar-height;
+  }
+
   &.is-dialog {
     position: inherit;
   }

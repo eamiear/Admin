@@ -1,7 +1,7 @@
 <template>
   <el-submenu
     v-if="menus.children && menus.children.length > 0"
-    :index="menus.path">
+    :index="timestamp">
     <template slot="title">
       <span slot="title" class="el-menu-item-title">{{menus.name}}</span>
     </template>
@@ -11,7 +11,7 @@
       :menus="item"></sub-menu-nav>
   </el-submenu>
   <el-menu-item
-    :index="menus.path"
+    :index="timestamp"
     v-else-if="(!menus.children || (menus.children && menus.children.length === 0))"
     @click="routerHandler(menus.path, $route)">
     <span slot="title" class="el-menu-item-title">{{menus.name}}</span>
@@ -27,6 +27,9 @@ export default {
   },
   components: { SubMenuNav },
   computed: {
+    timestamp () {
+      return Date.now() + ''
+    }
   },
   methods: {
     routerHandler (path) {
