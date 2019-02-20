@@ -50,6 +50,7 @@ const menu = {
     generateNavibarMenu ({ commit }) {
       return new Promise(resolve => {
         store.dispatch('getUserInfo').then(userInfo => {
+          userInfo.type = 1
           commit('SET_MENU_NAV_LIST', userInfo.type === 1 ? merchantMenus : operatorMenus)
           resolve(userInfo)
         }).catch(() => {

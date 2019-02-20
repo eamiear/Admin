@@ -35,6 +35,7 @@
 
   .navbar-menu-nav,
   .sys-menu-nav{
+    display: inline-block;
     line-height: $navbar-height;
     text-align: center;
     background-color: transparent;
@@ -56,12 +57,14 @@
 
   }
   .el-menu--horizontal.el-menu.sys-menu-nav{
-    display: inline-block;
     vertical-align: middle;
     margin-right: 0;
   }
   .el-menu--horizontal > .el-menu-item.is-active{
     border-bottom-width: 1px;
+  }
+  .el-menu--horizontal.sys-menu-nav > .el-menu-item.is-active{
+    border-bottom-width: 0;
   }
 
   .el-menu--horizontal > .el-submenu .el-submenu__title{

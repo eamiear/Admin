@@ -16,7 +16,7 @@ export default {
 
     }
   },
-  components: {UraMenu},
+  components: { UraMenu },
   computed: {
     ...mapGetters([
       'sysMenuList'

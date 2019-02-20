@@ -2,12 +2,13 @@
  * @Author: eamiear
  * @Date: 2019-02-06 18:06:02
  * @Last Modified by: eamiear
- * @Last Modified time: 2019-02-10 15:52:31
+ * @Last Modified time: 2019-02-20 15:15:50
  */
 
 import common from './common'
 import operator from './operator'
 import merchants from './merchants'
+import system from './system'
 const menuRoutes = {
   name: 'home',
   path: '/',
@@ -23,6 +24,7 @@ const menuRoutes = {
   },
   ...operator,
   ...merchants,
+  ...system,
   ...common
   ]
 }

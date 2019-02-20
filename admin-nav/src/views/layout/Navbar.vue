@@ -20,7 +20,6 @@
         </el-dropdown>
       </div>
 
-      <!-- <ura-menu menuMode="horizontal" class="navbar-menu-nav"></ura-menu> -->
       <ura-nav-menu class="navbar-menu-nav"></ura-nav-menu>
 
       <el-dialog title="重设密码" width="40%" :visible.sync="passwordModelVisible" :close-on-click-modal="false">

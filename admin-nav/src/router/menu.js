@@ -35,9 +35,9 @@ export const merchantMenus = [
 export const systemtMenus = [
   {
     name: '系统主题',
-    path: '/merchant/store/list.html'
+    path: '/system/theme.html'
   }, {
     name: '系统消息',
-    path: '/merchant/brand/list.html'
+    path: '/system/message.html'
   }
 ]
