@@ -2,49 +2,44 @@
  * @Author: eamiear
  * @Date: 2019-02-06 21:34:24
  * @Last Modified by: eamiear
- * @Last Modified time: 2019-02-10 17:33:01
+ * @Last Modified time: 2019-02-19 10:36:55
  */
 
-import request from '@/common/ajax'
+import request from '@/common/fetch'
 
-import {CLIENT_TYPES, LOGIN_TYPES} from '@/common/constants'
 
 const SystemAPI = {
-  login (account, password, loginType = LOGIN_TYPES.LOGINNAME_PASS, sysId = CLIENT_TYPES.MERCHANTS) {
+  login (account, password) {
     return request.post({
       url: 'login',
-      reqMethod: 'account.login.doLogin',
       params: {
         account,
-        password,
-        loginType,
-        sysId
+        password
       }
     })
   },
   logout (accessToken) {
     return request.post({
       url: 'logout',
-      reqMethod: 'account.operator.login.loginOut',
       params: {accessToken}
     })
   },
   reNewAcessToken (oldAccessToken) {
     return request.post({
-      reqMethod: 'account.operator.login.renewToken',
+      url: 'renewToken',
       params: {accessToken: oldAccessToken}
     })
   },
   resetPassword (params) {
     return request.post({
-      reqMethod: 'account.user.service.modifyLoginPassword',
+      url: 'resetPassword',
       params
     })
   },
   // 获取七牛token
   getQiniuToken () {
     return request.post({
-      reqMethod: 'common.upload.getUpToken'
+      url: 'getQiniuToken'
     })
   },
   /**
@@ -53,7 +48,7 @@ const SystemAPI = {
    */
   getReqUrlByQiniuKey (key) {
     return request.post({
-      reqMethod: 'common.upload.getUrlByKey',
+      url: 'qiniu/url',
       params: {key}
     })
   }

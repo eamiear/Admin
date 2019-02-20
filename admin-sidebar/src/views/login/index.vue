@@ -1,24 +1,54 @@
 <template>
-  <section>
-    <h3 >招商</h3>
-    <el-form :model="loginForm" :rules="loginRules" ref="loginForm" label-position="left">
-      <el-form-item prop="account">
-        <el-input name="account" type="text" v-model="loginForm.account" placeholder="账号" />
-      </el-form-item>
+  <section class="ura-login">
+    <div class="ura-login-container">
+      <h3 class="ura-login-header">管理平台登陆</h3>
+      <el-form class="ura-login-body" :model="loginForm" :rules="loginRules" ref="loginForm" label-position="left">
+        <el-form-item prop="account">
+          <el-input name="account" type="text" v-model="loginForm.account" placeholder="账号" />
+        </el-form-item>
+        <el-form-item prop="password">
+          <el-input
+            name="password"
+            type="password"
+            v-model="loginForm.password"
+            placeholder="密码"
+            @keyup.enter.native="handleLogin" />
+        </el-form-item>
+      </el-form>
+      <el-button class="ura-login-footer" type="primary" :loading="loading" @click.native.prevent="handleLogin">登录</el-button>
+    </div>
 
-      <el-form-item prop="password">
-        <el-input
-          name="password"
-          type="password"
-          v-model="loginForm.password"
-          placeholder="密码"
-          @keyup.enter.native="handleLogin" />
-      </el-form-item>
-
-      <el-button type="primary" :loading="loading" @click.native.prevent="handleLogin">登录</el-button>
-    </el-form>
   </section>
 </template>
+
+<style lang="scss" scoped>
+  .ura-login{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .ura-login-container{
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background: #fff;
+    width: 50%;
+    padding: 10px 20px 20px 20px;
+    box-shadow: 1px 1px 3px #ddd;
+  }
+  .ura-login-header{
+    margin: 10px 0 30px 0;
+    text-align: center;
+  }
+  .ura-login-body{
+
+  }
+  .ura-login-footer{
+    padding: 12px 15px;
+    width: 100%;
+  }
+</style>
 
 <script>
 export default {

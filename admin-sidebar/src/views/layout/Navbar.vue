@@ -1,8 +1,9 @@
 <template>
   <section>
-    <brand></brand>
+    <ura-brand></ura-brand>
     <nav class="navbar navbar-static-top is-dialog">
       <div class="navbar-custom-menu">
+        <ura-sys-menu class="sys-menu-nav"></ura-sys-menu>
         <el-dropdown trigger="click" class="uv-user-menu" @command="handleCommand">
           <el-button class="uv-menu-btn">
             <div class="user uv-user-menu">
@@ -19,7 +20,7 @@
         </el-dropdown>
       </div>
 
-      <sidebar class="navbar-menu-nav"></sidebar>
+      <ura-nav-menu class="navbar-menu-nav"></ura-nav-menu>
 
       <el-dialog title="重设密码" width="40%" :visible.sync="passwordModelVisible" :close-on-click-modal="false">
         <el-form autoComplete="on" :rules="passwordModelRules" :model="passwordModel"  ref="passwordRef" label-position="right" label-width="18%">
@@ -46,8 +47,9 @@
 </template>
 
 <script>
-import Brand from '@/views/layout/Brand.vue'
-import Sidebar from '@/views/layout/Sidebar.vue'
+import UraBrand from '@/views/layout/Brand.vue'
+import UraNavMenu from '@/views/layout/NavMenu.vue'
+import UraSysMenu from '@/views/layout/SysMenu.vue'
 import { mapGetters } from 'vuex'
 import SystemAPI from '@/api/system'
 export default {
@@ -82,7 +84,7 @@ export default {
       }
     }
   },
-  components: { Brand, Sidebar },
+  components: { UraBrand, UraNavMenu, UraSysMenu },
   computed: {
     ...mapGetters([
       'sidebar',

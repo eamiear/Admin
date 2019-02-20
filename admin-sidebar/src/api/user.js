@@ -1,34 +1,33 @@
-import request from '@/common/ajax'
+import request from '@/common/fetch'
 
 const UserAPI = {
   getUserInfo (uid) {
     return request.post({
-      url: 'userinfo',
-      reqMethod: 'account.userdata.getUserByUid',
+      url: 'user/info',
       params: {uid}
     })
   },
   fetchUserList (params = {}) {
     return request.post({
-      reqMethod: 'account.userdata.getUserList',
+      url: 'user/list',
       params
     })
   },
   createUser (params) {
     return request.post({
-      reqMethod: 'account.reg.doReg',
+      url: 'user/create',
       params
     })
   },
   enableUser (uid) {
     return request.post({
-      reqMethod: 'account.user.service.unDisableUser',
+      url: 'user/enable',
       params: {uid}
     })
   },
   disableUser (uid) {
     return request.post({
-      reqMethod: 'account.user.service.disableUser',
+      url: 'user/disable',
       params: {uid}
     })
   }

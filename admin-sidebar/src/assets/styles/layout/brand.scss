@@ -3,19 +3,18 @@
 .logo {
   @include transition( $transition-speed $transition-fn);
   float: left;
-  color: #000;
-  height: $navbar-height;
-  font-size: 20px;
-  line-height: 50px;
-  text-align: center;
   font-family: "microsoft yahei", Helvetica, Arial, sans-serif;
+  color: #000;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  height: $navbar-height;
+  line-height: 50px;
   padding: 0 15px;
-  font-weight: 300;
   overflow: hidden;
 
-  &:hover{
-    color: #333;
-    font-weight: 600;
+  &:hover, &:active, &:visited{
+    color: #000;
   }
 
   .brand-lg,

@@ -1,6 +1,10 @@
-/**
- * Created by skz on 2018/3/13 13:59
+/*
+ * @Author: eamiear
+ * @Date: 2019-02-19 10:38:07
+ * @Last Modified by:   eamiear
+ * @Last Modified time: 2019-02-19 10:38:07
  */
+
 import { AUTHORITY_KEY, USER_TOKEN_KEY, USER_ID_KEY } from '@/common/constants'
 const Cacher = {
   set (key, value) {
