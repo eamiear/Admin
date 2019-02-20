@@ -3,6 +3,7 @@
     <ura-brand></ura-brand>
     <nav class="navbar navbar-static-top is-dialog">
       <div class="navbar-custom-menu">
+        <ura-sys-menu class="sys-menu-nav"></ura-sys-menu>
         <el-dropdown trigger="click" class="uv-user-menu" @command="handleCommand">
           <el-button class="uv-menu-btn">
             <div class="user uv-user-menu">
@@ -49,6 +50,7 @@
 <script>
 import UraBrand from '@/views/layout/Brand.vue'
 import UraNavMenu from '@/views/layout/NavMenu.vue'
+import UraSysMenu from '@/views/layout/SysMenu.vue'
 import { mapGetters } from 'vuex'
 import SystemAPI from '@/api/system'
 export default {
@@ -83,7 +85,7 @@ export default {
       }
     }
   },
-  components: { UraBrand, UraNavMenu },
+  components: { UraBrand, UraNavMenu, UraSysMenu },
   computed: {
     ...mapGetters([
       'sidebar',

@@ -31,3 +31,13 @@ export const merchantMenus = [
     path: '/operator/usercenter/password.html'
   }
 ]
+
+export const systemtMenus = [
+  {
+    name: '系统主题',
+    path: '/merchant/store/list.html'
+  }, {
+    name: '系统消息',
+    path: '/merchant/brand/list.html'
+  }
+]
