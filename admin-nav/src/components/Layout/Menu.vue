@@ -17,6 +17,7 @@
 <script>
 import SubMenu from './SubMenu.vue'
 export default {
+  name: 'UraMenu',
   props: {
     menuMode: {
       type: String,

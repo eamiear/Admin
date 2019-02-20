@@ -28,18 +28,23 @@ const menu = {
   },
   actions: {
     generateSidebarMenu ({ commit }) {
+      // return new Promise(resolve => {
+      //   store.dispatch('getUserInfo').then(userInfo => {
+      //     commit('SET_SIDEBAR_MENU_LIST', userInfo.type === 1 ? merchantMenus : operatorMenus)
+      //     resolve(userInfo)
+      //   }).catch(() => {
+      //     commit('SET_SIDEBAR_MENU_LIST', [])
+      //   })
+      // })
+    },
+    generateNavibarMenu ({ commit }) {
       return new Promise(resolve => {
         store.dispatch('getUserInfo').then(userInfo => {
           commit('SET_MENU_NAV_LIST', userInfo.type === 1 ? merchantMenus : operatorMenus)
           resolve(userInfo)
         }).catch(() => {
-          commit('SET_SIDEBAR_MENU_LIST', [])
+          commit('SET_MENU_NAV_LIST', [])
         })
-      })
-    },
-    generateNavibarMenu ({ commit }) {
-      return new Promise(resolve => {
-        commit('SET_MENU_NAV_LIST', [])
       })
     },
     updateMenuNavActiveName ({ commit }, activeName) {

@@ -30,7 +30,10 @@ service.interceptors.response.use(({data}) => {
     Router.push({path: '/login'})
   }
   return data
-}, error => Promise.reject(error))
+}, error => {
+  // TODO alert exception
+  Promise.reject(error)
+})
 
 service.getRequestUrl = url => requestBaseUrl + url
 

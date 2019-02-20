@@ -1,21 +1,22 @@
 <template>
-  <ura-nav-menu
+  <ura-menu
     :menuList="navbarMenus"
     :menuActive="navMenuActiveName"
     :menuEvent="menuEvent">
-  </ura-nav-menu>
+  </ura-menu>
 </template>
 
 <script>
-import UraNavMenu from '@/components/Layout/Menu.vue'
+import UraMenu from '@/components/Layout/Menu.vue'
 import { mapGetters } from 'vuex'
 export default {
+  name: 'NavMenu',
   data () {
     return {
 
     }
   },
-  components: [UraNavMenu],
+  components: {UraMenu},
   computed: {
     ...mapGetters([
       'navbarMenus'
