@@ -1,0 +1,53 @@
+<template>
+  <ura-nav-menu
+    :menuList="navbarMenus"
+    :menuActive="navMenuActiveName"
+    :menuEvent="menuEvent">
+  </ura-nav-menu>
+</template>
+
+<script>
+import UraNavMenu from '@/components/Layout/Menu.vue'
+import { mapGetters } from 'vuex'
+export default {
+  data () {
+    return {
+
+    }
+  },
+  components: [UraNavMenu],
+  computed: {
+    ...mapGetters([
+      'navbarMenus'
+    ]),
+    navMenuActiveName: {
+      get () {
+        return this.$store.state.menu.menuNavActiveName
+      },
+      set (name) {
+        this.$store.dispatch('updateMenuNavActiveName', name)
+      }
+    }
+  },
+  watch: {
+    $route: 'routerHandler'
+  },
+  methods: {
+    menuEvent (path, router) {
+      const routeName = path
+      if (/\S/.test(routeName)) {
+        this.$router.push({ name: routeName, query: { s: Date.now() }, params: { s: Date.now() } }, to => {
+          to.matched && to.matched.length === 0 && this.$router.push({ path: '/404' })
+        })
+      }
+    },
+    routerHandler (route) {
+      this.navMenuActiveName = `${route.name}`
+    }
+  },
+}
+</script>
+
+<style scoped>
+
+</style>

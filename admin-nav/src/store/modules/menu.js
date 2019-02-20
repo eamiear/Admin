@@ -1,4 +1,4 @@
-import { SET_MENU_NAV_LIST, UPDATE_MENU_NAV_ACTIVE_NAME } from '../mutation-types'
+import { SET_MENU_NAV_LIST, UPDATE_MENU_NAV_ACTIVE_NAME, SET_SIDEBAR_MENU_LIST, UPDATE_SIDEBAR_MENU_ACTIVE_NAME } from '../mutation-types'
 
 // import Storage from '@/common/cache'
 // import SysMenuAPI from '@/api/menu'
@@ -8,7 +8,9 @@ import store from '@/store'
 const menu = {
   state: {
     menuNavActiveName: '',
-    navbarMenus: []
+    navbarMenus: [],
+    sidebarMenuActiveName: '',
+    sidebarMenuList: []
   },
   mutations: {
     [SET_MENU_NAV_LIST] (state, navbarMenus) {
@@ -16,6 +18,12 @@ const menu = {
     },
     [UPDATE_MENU_NAV_ACTIVE_NAME] (state, menuNavActiveName) {
       state.menuNavActiveName = menuNavActiveName
+    },
+    [SET_SIDEBAR_MENU_LIST] (state, sidebarMenuList) {
+      state.sidebarMenuList = sidebarMenuList
+    },
+    [UPDATE_SIDEBAR_MENU_ACTIVE_NAME] (state, sidebarMenuActiveName) {
+      state.sidebarMenuActiveName = sidebarMenuActiveName
     }
   },
   actions: {
@@ -25,8 +33,13 @@ const menu = {
           commit('SET_MENU_NAV_LIST', userInfo.type === 1 ? merchantMenus : operatorMenus)
           resolve(userInfo)
         }).catch(() => {
-          commit('SET_MENU_NAV_LIST', [])
+          commit('SET_SIDEBAR_MENU_LIST', [])
         })
+      })
+    },
+    generateNavibarMenu ({ commit }) {
+      return new Promise(resolve => {
+        commit('SET_MENU_NAV_LIST', [])
       })
     },
     updateMenuNavActiveName ({ commit }, activeName) {

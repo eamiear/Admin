@@ -19,7 +19,8 @@
         </el-dropdown>
       </div>
 
-      <ura-menu menuMode="horizontal" class="navbar-menu-nav"></ura-menu>
+      <!-- <ura-menu menuMode="horizontal" class="navbar-menu-nav"></ura-menu> -->
+      <ura-nav-menu class="navbar-menu-nav"></ura-nav-menu>
 
       <el-dialog title="重设密码" width="40%" :visible.sync="passwordModelVisible" :close-on-click-modal="false">
         <el-form autoComplete="on" :rules="passwordModelRules" :model="passwordModel"  ref="passwordRef" label-position="right" label-width="18%">
@@ -47,7 +48,7 @@
 
 <script>
 import UraBrand from '@/views/layout/Brand.vue'
-import UraMenu from '@/views/layout/Menu.vue'
+import UraNavMenu from '@/views/layout/NavMenu.vue'
 import { mapGetters } from 'vuex'
 import SystemAPI from '@/api/system'
 export default {
@@ -82,7 +83,7 @@ export default {
       }
     }
   },
-  components: { UraBrand, UraMenu },
+  components: { UraBrand, UraNavMenu },
   computed: {
     ...mapGetters([
       'sidebar',
