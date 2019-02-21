@@ -1,0 +1,34 @@
+@import './variable.scss';
+
+.mocura{
+  background-color: $app-background-color;
+
+  .app-wrapper{
+
+  }
+  .app-sidebar{
+    .ura-menu {
+      background-color: $sidebar-menu-background-color;
+    }
+    .el-menu-item,
+    .el-submenu > .el-submenu__title{
+      color: $sidebar-menu-item-color;
+      &:hover, &:focus{
+        background-color: $sidebar-menu-background-hover-color;
+      }
+    }
+    .el-submenu > .el-menu{
+      background-color: $sidebar-deep-submenu-background-color;
+    }
+
+  }
+  .app-body{
+
+  }
+  .app-header{
+
+  }
+  .app-main{
+
+  }
+}
