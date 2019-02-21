@@ -1,14 +1,28 @@
 <template>
-  <section class="site-wrapper">
-    <navbar class="app-header"></navbar>
-    <article class="app-main" :style="appMainStyles">
-      <router-view/>
-    </article>
+  <section class="app-wrapper">
+    <aside class="app-sidebar">
+      <brand></brand>
+      <sidebar-menu></sidebar-menu>
+    </aside>
+    <section class="app-body">
+      <navbar class="app-header"></navbar>
+      <article class="app-main"  v-if="isTabView" :style="appMainStyles">
+        <keep-alive v-if="isKeepAlive">
+           <router-view/>
+        </keep-alive>
+         <router-view v-else/>
+      </article>
+      <tabs-view v-else/>
+    </section>
+
   </section>
 </template>
 
 <script>
+import Brand from '@/views/layout/Brand.vue'
+import SidebarMenu from '@/views/layout/SidebarMenu.vue'
 import Navbar from '@/views/layout/Navbar.vue'
+import TabsView from '@/components/Layout/TabsView.vue'
 import {
   mapGetters
 } from 'vuex'
@@ -16,7 +30,10 @@ import {
 export default {
   name: 'layout',
   components: {
-    Navbar
+    Brand,
+    SidebarMenu,
+    Navbar,
+    TabsView
   },
   created () {
     // this.getUserInfo()
@@ -31,6 +48,12 @@ export default {
     ...mapGetters([
       'documentClientHeight'
     ]),
+    appWrapperStyles () {
+      return {}
+    },
+    appBodyStyles () {
+      return {}
+    },
     appMainStyles () {
       let height = this.documentClientHeight
       height -= 50 // navbar
@@ -39,6 +62,12 @@ export default {
       }, {
         'height': `${height}px`
       }]
+    },
+    isTabView () {
+      return (this.$route.meta && this.$route.meta !== false) || !this.$route.meta
+    },
+    isKeepAlive () {
+      return this.$route.meta && this.$route.isKeepAlive
     }
   },
   methods: {

@@ -1,5 +1,5 @@
 <template>
-  <section class="site-wrapper">
+  <section class="app-wrapper">
     <navbar class="app-header"></navbar>
     <article class="app-main" :style="appMainStyles">
       <router-view/>
