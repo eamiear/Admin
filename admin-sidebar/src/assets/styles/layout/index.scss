@@ -4,8 +4,20 @@
   overflow: hidden;
 
   .el-menu.sidebar-menu{
-    margin-right: 110px;
+    // margin-right: 110px;
   }
+}
+.app-sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $sidebar-width;
+  height: 100%;
+}
+@import './sidebar.scss';
+
+.app-body{
+  margin-left: $sidebar-width;
 }
 .app-header {
   background-color: #fff;

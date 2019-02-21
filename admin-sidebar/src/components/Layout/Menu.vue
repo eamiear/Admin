@@ -1,6 +1,6 @@
 <template>
   <el-menu
-    class="sidebar-menu"
+    class="ura-menu"
     :mode="menuMode"
     unique-opened
     :router="false"

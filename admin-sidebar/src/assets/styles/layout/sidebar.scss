@@ -3,12 +3,18 @@
 // * ------------------
 // */
 
-.sidebar-menu{
+.ura-menu{
   .el-menu-item{
     height: $navbar-height;
     line-height: $navbar-height;
   }
-  .el-menu.sidebar-menu{
+  .el-menu{
     border-radius: 0;
   }
+}
+.sidebar-menu{
+  border-right: none;
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 50px;
 }

@@ -4,7 +4,7 @@
       <brand></brand>
       <sidebar-menu></sidebar-menu>
     </aside>
-    <section class="app-body">
+    <section class="app-body" :style="appBodyStyles">
       <navbar class="app-header"></navbar>
       <article class="app-main"  v-if="isTabView" :style="appMainStyles">
         <keep-alive v-if="isKeepAlive">
@@ -52,7 +52,7 @@ export default {
       return {}
     },
     appBodyStyles () {
-      return {}
+      return [{ 'minHeight': `${this.documentClientHeight}px` }, { 'height': `${this.documentClientHeight}px` }]
     },
     appMainStyles () {
       let height = this.documentClientHeight
