@@ -33,11 +33,12 @@
    position: relative;
    overflow-x: hidden;
    overflow-y: auto;
-
-   .app-container{
-     padding: 10px;
-   }
+  //  .app-container{
+  //    padding: 10px;
+  //  }
  }
+
+ @import './tabs-view.scss';
 
  // tansition
 .app-sidebar,

@@ -6,13 +6,13 @@
     </aside>
     <section class="app-body" :style="appBodyStyles">
       <navbar class="app-header"></navbar>
-      <article class="app-main"  v-if="isTabView" :style="appMainStyles">
+      <article class="app-main"  v-if="!isTabView" :style="appMainStyles">
         <keep-alive v-if="isKeepAlive">
            <router-view/>
         </keep-alive>
          <router-view v-else/>
       </article>
-      <tabs-view v-else/>
+      <tabs-view class="app-main" v-else/>
     </section>
 
   </section>
@@ -70,10 +70,10 @@ export default {
       }]
     },
     isTabView () {
-      return (this.$route.meta && this.$route.meta !== false) || !this.$route.meta
+      return (this.$route.meta && this.$route.meta.isTab !== false) || !this.$route.meta
     },
     isKeepAlive () {
-      return this.$route.meta && this.$route.isKeepAlive
+      return this.$route.meta && this.$route.meta.isKeepAlive
     }
   },
   methods: {

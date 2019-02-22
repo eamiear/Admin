@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs-container app-main">
+  <div class="tabs-container">
     <el-tabs
       class="tabs-wrapper"
       v-model="tabActiveName"
@@ -52,13 +52,7 @@ export default {
   name: 'TabsView',
   data () {
     return {
-      defaultQuery: {
-        conf: {
-          isMultiTab: false,
-          tabName: '',
-          seriesNo: Date.now() + Math.ceil((Math.random() * 1000))
-        }
-      }
+
     }
   },
   mounted () {

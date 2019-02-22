@@ -51,7 +51,8 @@ export const sidebartMenus = [
     path: '/system/message.html'
   }, {
     name: '商铺库',
-    path: '/merchant/store/list.html'
+    path: '/merchant/store/list.html',
+    meta: {isTab: true}
   }, {
     name: '品牌库',
     path: '/merchant/brand/list.html'
