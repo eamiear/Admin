@@ -8,6 +8,10 @@
     height: $navbar-height;
     line-height: $navbar-height;
   }
+  .el-menu-item,
+  .el-submenu > .el-submenu__title{
+    // padding-right: 40px;
+  }
   .el-menu{
     border-radius: 0;
   }
@@ -18,5 +22,5 @@
   overflow: auto;
   padding-bottom: 50px;
   // hide scroller bar
-  margin-right: -20px;
+  // margin-right: -20px;
 }
