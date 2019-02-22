@@ -18,7 +18,7 @@
         </el-dropdown>
       </div>
 
-      <ura-nav-menu class="navbar-menu-nav"></ura-nav-menu>
+      <!-- <ura-nav-menu class="navbar-menu-nav"></ura-nav-menu> -->
 
       <el-dialog title="重设密码" width="40%" :visible.sync="passwordModelVisible" :close-on-click-modal="false">
         <el-form autoComplete="on" :rules="passwordModelRules" :model="passwordModel"  ref="passwordRef" label-position="right" label-width="18%">
