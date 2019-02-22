@@ -3,8 +3,9 @@ $app-background-color: #ecf0f5;
 $theme-base-background-color: #222d32;
 $theme-base-text-color: rgb(197, 192, 192);
 
-$brand-color: $theme-base-text-color;
+$brand-color: lighten($theme-base-text-color, 30%);
 $brand-background-color: $theme-base-background-color;
+$brand-box-shadow-color: darken($theme-base-background-color, 25%);
 $brand-background-color-hover: #1E2C34;
 $brand-box-shadow-color: #0b161c;
 

@@ -4,18 +4,12 @@
   display: block;
   @include transition( $transition-speed $transition-fn);
   font-family: "microsoft yahei", Helvetica, Arial, sans-serif;
-  color: #000;
   font-weight: 600;
   font-size: 20px;
   text-align: center;
   height: $navbar-height;
   line-height: 50px;
   padding: 0 15px;
-  overflow: hidden;
-
-  &:hover, &:active, &:visited{
-    color: #000;
-  }
 
   .brand-lg,
   .logo-lg {

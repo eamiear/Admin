@@ -6,7 +6,15 @@
   .app-wrapper{
 
   }
+
   .app-sidebar{
+    .brand{
+      color: $brand-color;
+      background-color: $brand-background-color;
+      &:hover, &:active, &:visited{
+        color: $brand-color;
+      }
+    }
     .ura-menu {
       background-color: $sidebar-menu-background-color;
     }
