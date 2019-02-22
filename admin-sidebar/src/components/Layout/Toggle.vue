@@ -1,5 +1,5 @@
 <template>
-    <a href="javascript:;" @click="click" class="ura-toggle" :class="{'is-active':isActive}" role="button">
+    <a href="javascript:;" @click="collapse" class="ura-toggle" :class="{'is-active':isActive}" role="button">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -27,7 +27,7 @@ export default {
       type: Boolean,
       default: false
     },
-    click: {
+    collapse: {
       type: Function,
       default: () => {}
     }

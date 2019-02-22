@@ -11,6 +11,7 @@
   height: 100%;
   overflow: hidden;
 }
+
 @import './sidebar.scss';
 
 .app-body{
@@ -37,3 +38,22 @@
      padding: 10px;
    }
  }
+
+ // tansition
+.app-sidebar,
+.app-body{
+  @include transition(width $transition-speed $transition-fn, margin-left $transition-speed $transition-fn);
+}
+
+// collapse
+.app-sidebar--collapse{
+  .el-menu--collapse{
+    width: inherit;
+  }
+  .app-sidebar{
+    width: $sidebar-contarct-width;
+  }
+  .app-body{
+    margin-left: $sidebar-contarct-width;
+  }
+}

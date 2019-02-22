@@ -19,7 +19,7 @@
       </div>
 
       <!-- <ura-nav-menu class="navbar-menu-nav"></ura-nav-menu> -->
-      <ura-toggle></ura-toggle>
+      <ura-toggle :collapse="collapseSidebar" :isActive="sidebarCollapse"></ura-toggle>
       <el-dialog title="重设密码" width="40%" :visible.sync="passwordModelVisible" :close-on-click-modal="false">
         <el-form autoComplete="on" :rules="passwordModelRules" :model="passwordModel"  ref="passwordRef" label-position="right" label-width="18%">
           <el-form-item label="旧密码:" prop="oldPassword">
@@ -85,7 +85,8 @@ export default {
     ...mapGetters([
       'sidebar',
       'name',
-      'avatar'
+      'avatar',
+      'sidebarCollapse'
     ])
   },
   watch: {
@@ -100,8 +101,8 @@ export default {
       command === 'logout' && this.logout()
       command === 'resetPassword' && this.handlePassword()
     },
-    switchSidebarCollapse () {
-      this.$store.dispatch('switchSidebarCollapse', !this.sidebarCollapse)
+    collapseSidebar () {
+      this.$store.dispatch('collapseSidebar', !this.sidebarCollapse)
     },
     logout () {
       this.$store.dispatch('logOut').then(() => {

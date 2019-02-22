@@ -2,7 +2,7 @@
  * @Author: eamiear
  * @Date: 2019-02-06 18:38:53
  * @Last Modified by: eamiear
- * @Last Modified time: 2019-02-10 17:36:10
+ * @Last Modified time: 2019-02-22 16:07:32
  */
 
 import Vue from 'vue'
@@ -16,6 +16,7 @@ import mutations from './mutations'
 Vue.use(Vuex)
 
 const state = {
+  sidebarCollapse: false,
   documentClientHeight: 0
 }
 

@@ -2,7 +2,7 @@
  * @Author: eamiear
  * @Date: 2019-02-06 18:36:28
  * @Last Modified by: eamiear
- * @Last Modified time: 2019-02-20 11:37:30
+ * @Last Modified time: 2019-02-22 16:07:30
  */
 
 export default {
@@ -15,5 +15,6 @@ export default {
   navbarMenus: state => state.menu.navbarMenus,
   sysMenuList: state => state.menu.sysMenuList,
   sidebarMenuList: state => state.menu.sidebarMenuList,
+  sidebarCollapse: state => state.sidebarCollapse,
   documentClientHeight: state => state.documentClientHeight
 }

@@ -2,9 +2,9 @@
  * @Author: eamiear
  * @Date: 2019-02-06 18:36:35
  * @Last Modified by: eamiear
- * @Last Modified time: 2019-02-20 11:36:10
+ * @Last Modified time: 2019-02-22 16:09:31
  */
-
+export const COLLAPSE_SIDEBAR = 'COLLAPSE_SIDEBAR'
 export const UPDATE_DOCUMENT_CLIENT_HEIGHT = 'UPDATE_DOCUMENT_CLIENT_HEIGHT'
 
 // menu mutations

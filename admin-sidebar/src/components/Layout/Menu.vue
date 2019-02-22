@@ -5,6 +5,7 @@
     unique-opened
     :router="false"
     :collapse="isCollapse"
+    :collapse-transition="transition"
     :default-active="menuActive">
     <sub-menu
       v-for="menu in menuList"
@@ -35,6 +36,10 @@ export default {
     menuEvent: {
       type: Function,
       default: () => {}
+    },
+    transition: {
+      type: Boolean,
+      default: false
     },
     isCollapse: {
       type: Boolean,

@@ -1,5 +1,5 @@
 <template>
-  <section class="app-wrapper">
+  <section class="app-wrapper" :class="sidebarCollapseClass">
     <aside class="app-sidebar">
       <brand></brand>
       <sidebar-menu></sidebar-menu>
@@ -46,8 +46,14 @@ export default {
   },
   computed: {
     ...mapGetters([
+      'sidebarCollapse',
       'documentClientHeight'
     ]),
+    sidebarCollapseClass () {
+      return {
+        'app-sidebar--collapse': this.sidebarCollapse
+      }
+    },
     appWrapperStyles () {
       return {}
     },

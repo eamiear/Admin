@@ -2,6 +2,7 @@
   <ura-sidebar-menu
     class="sidebar-menu"
     menuMode="vertical"
+    :isCollapse="sidebarCollapse"
     :menuList="sidebarMenuList"
     :menuActive="sidebarMenuActiveName"
     :menuEvent="menuEvent">
@@ -21,7 +22,8 @@ export default {
   components: {UraSidebarMenu},
   computed: {
     ...mapGetters([
-      'sidebarMenuList'
+      'sidebarMenuList',
+      'sidebarCollapse'
     ]),
     sidebarMenuActiveName: {
       get () {

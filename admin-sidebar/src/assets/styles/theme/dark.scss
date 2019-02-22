@@ -43,6 +43,7 @@
     .icon-bar{
       background-color: $toggle-color;
     }
+    &.is-active .icon-bar,
     &:hover .icon-bar{
       background-color: $toggle-hover-color;
     }
