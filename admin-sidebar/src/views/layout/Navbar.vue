@@ -19,7 +19,7 @@
       </div>
 
       <!-- <ura-nav-menu class="navbar-menu-nav"></ura-nav-menu> -->
-
+      <ura-toggle></ura-toggle>
       <el-dialog title="重设密码" width="40%" :visible.sync="passwordModelVisible" :close-on-click-modal="false">
         <el-form autoComplete="on" :rules="passwordModelRules" :model="passwordModel"  ref="passwordRef" label-position="right" label-width="18%">
           <el-form-item label="旧密码:" prop="oldPassword">
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import UraNavMenu from '@/views/layout/NavMenu.vue'
+import UraToggle from '@/components/Layout/Toggle.vue'
 import { mapGetters } from 'vuex'
 import SystemAPI from '@/api/system'
 export default {
@@ -80,7 +80,7 @@ export default {
       }
     }
   },
-  components: { UraNavMenu },
+  components: { UraToggle },
   computed: {
     ...mapGetters([
       'sidebar',

@@ -28,7 +28,6 @@
     .el-submenu > .el-menu{
       background-color: $sidebar-deep-submenu-background-color;
     }
-
   }
   .app-body{
 
@@ -38,5 +37,14 @@
   }
   .app-main{
 
+  }
+
+  .ura-toggle{
+    .icon-bar{
+      background-color: $toggle-color;
+    }
+    &:hover .icon-bar{
+      background-color: $toggle-hover-color;
+    }
   }
 }
