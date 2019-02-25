@@ -7,8 +7,9 @@ import {
   CLOSE_LEFT_TABS_NAV_LIST,
   CLOSE_RIGHT_TABS_NAV_LIST
 } from '../mutation-types'
+import { DASHBOARD_HOME } from '@/common/constants'
 
-const HOME_DASHBOARD = '/dashboard'
+const HOME_DASHBOARD = DASHBOARD_HOME || '/dashboard'
 
 export default {
   state: {
