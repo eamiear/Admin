@@ -35,49 +35,53 @@ export const merchantMenus = [
 export const systemtMenus = [
   {
     name: '系统主题',
-    path: '/system/theme.html'
+    path: '/system/theme.html',
+    meta: {isTab: true}
   }, {
     name: '系统消息',
-    path: '/system/message.html'
+    path: '/system/message.html',
+    meta: {isTab: true}
   }
 ]
 
 export const sidebartMenus = [
   {
+    id: 1,
     name: '首页',
     path: '/dashboard'
   },
   {
+    id: 2,
     name: '系统主题',
     path: '/system/theme.html'
   }, {
-    name: '系统消息',
-    path: '/system/message.html'
-  }, {
+    id: 3,
     name: '商铺库',
-    path: '/merchant/store/list.html',
-    meta: {isTab: true}
+    path: '/merchant/store/list.html'
   }, {
+    id: 4,
     name: '品牌库',
     path: '/merchant/brand/list.html'
   }, {
+    id: 5,
     name: '发布品牌',
     path: '/merchant/brand/publish.html'
   }, {
+    id: 6,
     name: '个人中心',
     path: '/operator/usercenter/password.html'
   }, {
+    id: 7,
     name: '发布商铺',
     path: '/operator/shops/projectList.html'
   }, {
-    name: '个人中心',
-    path: '/operator/usercenter/password.html'
-  }, {
+    id: 8,
     name: '配置信息',
     children: [
       {
+        id: 9,
         name: '系统配置',
-        path: '/operator/usercenter/password.html'
+        path: '/system/message.html'
       }
     ]
   }
