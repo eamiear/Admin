@@ -25,6 +25,12 @@
         background-color: $sidebar-menu-background-hover-color;
       }
     }
+    .el-menu-item.is-active{
+      background-color: $sidebar-menu-background-active-color;
+      .el-menu-item-title{
+        color: $sidebar-menu-item-active-color;
+      }
+    }
     .el-submenu > .el-menu{
       background-color: $sidebar-deep-submenu-background-color;
     }

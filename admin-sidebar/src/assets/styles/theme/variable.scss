@@ -29,6 +29,7 @@ $sidebar-deep-submenu-background-color: lighten($sidebar-submenu-background-colo
 $sidebar-menu-background-hover-color: lighten($sidebar-menu-background-color, 10%);
 $sidebar-menu-background-active-color: $sidebar-menu-background-hover-color;
 $sidebar-menu-item-color: rgb(197, 192, 192);
+$sidebar-menu-item-active-color: lighten($sidebar-menu-item-color, 50%);
 $hover-menu__color: #fff;
 $hover-menu__background-color: #1e282c;
 $hover-menu__border-left-color: #3c8dbc;

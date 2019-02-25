@@ -63,12 +63,13 @@ export default {
           const menuNav = this.getMenuNavByRouteName(route.name, this.sidebarMenuList)
           if (!isEmpty(menuNav)) {
             tab = {
-              id: menuNav.id || `tid_${Date.now}`,
+              id: menuNav.id,
               name: route.name,
               title: menuNav.name,
               type: route.meta.type,
               path: menuNav.path,
-              query: route.query
+              query: route.query,
+              params: route.params
             }
             this.$store.dispatch('addTabsNavList', tab)
           } else {
