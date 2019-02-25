@@ -14,6 +14,15 @@
             placeholder="密码"
             @keyup.enter.native="handleLogin" />
         </el-form-item>
+        <el-form-item prop="capcha">
+          <el-input
+            class="capcha-input"
+            name="capcha"
+            type="text"
+            v-model="loginForm.capcha"
+            placeholder="验证码" />
+          <span class='capcha-code'><img @click="refreshCapcha()" :src="capchaCodeImage" /></span>
+        </el-form-item>
       </el-form>
       <el-button class="ura-login-footer" type="primary" :loading="loading" @click.native.prevent="handleLogin">登录</el-button>
     </div>
@@ -41,6 +50,21 @@
   .ura-login-header{
     margin: 10px 0 30px 0;
     text-align: center;
+  }
+  .el-input.capcha-input{
+    width: 75%;
+  }
+  .capcha-code{
+    display: inline-block;
+    width: 25%;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 2px;
+    vertical-align: bottom;
+    > img{
+      width: 100%;
+      height: 100%;
+    }
   }
   .ura-login-body{
 
@@ -72,16 +96,26 @@ export default {
     return {
       loginForm: {
         account: '',
-        password: ''
+        password: '',
+        capcha: ''
       },
       loginRules: {
         account: [{ required: true, trigger: 'blur', validator: validateAccount }],
-        password: [{ required: true, trigger: 'blur', validator: validatePassword }]
+        password: [{ required: true, trigger: 'blur', validator: validatePassword }],
+        capcha: [{ required: true, trigger: 'blur', message: '验证码不能为空' }]
       },
       loading: false
     }
   },
+  computed: {
+    capchaCodeImage () {
+      return this.refreshCapcha()
+    }
+  },
   methods: {
+    refreshCapcha () {
+      return 'http://dummyimage.com/90x54/50B347/FFF&text=8 f2 a'
+    },
     handleLogin () {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
