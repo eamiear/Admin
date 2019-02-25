@@ -44,6 +44,10 @@ export const systemtMenus = [
 
 export const sidebartMenus = [
   {
+    name: '首页',
+    path: '/dashboard'
+  },
+  {
     name: '系统主题',
     path: '/system/theme.html'
   }, {

@@ -25,7 +25,6 @@ export default {
     ...mapGetters([
       'sidebarMenuList',
       'tabsNavList',
-      'sidebarMenuList',
       'sidebarCollapse'
     ]),
     sidebarMenuActiveName: {
@@ -36,6 +35,11 @@ export default {
         this.$store.dispatch('updateSidebarMenuActiveName', name)
       }
     }
+  },
+  created () {
+    this.$store.dispatch('generateSidebarMenu').then(() => {
+      this.routerHandler(this.$route)
+    })
   },
   watch: {
     $route: 'routerHandler'
@@ -59,7 +63,7 @@ export default {
           const menuNav = this.getMenuNavByRouteName(route.name, this.sidebarMenuList)
           if (!isEmpty(menuNav)) {
             tab = {
-              id: menuNav.id,
+              id: menuNav.id || `tid_${Date.now}`,
               name: route.name,
               title: menuNav.name,
               type: route.meta.type,
@@ -81,7 +85,7 @@ export default {
         if (menuNavList[i].children && menuNavList[i].children.length >= 1) {
           temp = temp.concat(menuNavList[i].children)
         } else if (menuNavList[i].path === routeName) {
-          return menuNavList[i] || {}
+          return menuNavList[i]
         }
       }
       return temp.length >= 1 ? this.getMenuNavByRouteName(routeName, temp) : []

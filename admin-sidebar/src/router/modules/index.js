@@ -2,7 +2,7 @@
  * @Author: eamiear
  * @Date: 2019-02-06 18:06:02
  * @Last Modified by: eamiear
- * @Last Modified time: 2019-02-20 15:15:50
+ * @Last Modified time: 2019-02-25 10:54:36
  */
 
 import common from './common'
@@ -20,7 +20,7 @@ const menuRoutes = {
     path: '/dashboard',
     desc: '首页面板',
     component: () => import('views/dashboard/index.vue'),
-    // redirect: { path: '/operator/shops/projectList.html' }
+    meta: {isTab: true}
   },
   ...operator,
   ...merchants,
