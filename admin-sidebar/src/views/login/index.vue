@@ -34,6 +34,7 @@
     border-radius: 6px;
     background: #fff;
     width: 50%;
+    max-width: 400px;
     padding: 10px 20px 20px 20px;
     box-shadow: 1px 1px 3px #ddd;
   }
