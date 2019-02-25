@@ -8,7 +8,7 @@ import {
   CLOSE_RIGHT_TABS_NAV_LIST
 } from '../mutation-types'
 
-const HOME_DASHBOARD = 'dashboard'
+const HOME_DASHBOARD = '/dashboard'
 
 export default {
   state: {
