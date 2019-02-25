@@ -24,7 +24,8 @@ export default {
       state.tabsNavList = state.tabsNavList.filter(tab => tab.name === HOME_DASHBOARD)
     },
     [ADD_TABS_NAV_LIST] (state, tab) {
-      state.tabsNavList.push(tab)
+      tab.name === HOME_DASHBOARD ? state.tabsNavList.unshift(tab) : state.tabsNavList.push(tab)
+      // state.tabsNavList.push(tab)
     },
     [DEL_TABS_NAV_LIST] (state, tabName) {
       if (tabName === HOME_DASHBOARD) return

@@ -70,7 +70,7 @@ export default {
       }]
     },
     isTabView () {
-      return (this.$route.meta && this.$route.meta.isTab !== false) || !this.$route.meta
+      return this.$route.meta && this.$route.meta.isTab
     },
     isKeepAlive () {
       return this.$route.meta && this.$route.meta.isKeepAlive

@@ -84,5 +84,15 @@ export const sidebartMenus = [
         path: '/system/message.html'
       }
     ]
+  }, {
+    id: 98,
+    name: '401',
+    path: '/401',
+    hide: true
+  }, {
+    id: 99,
+    name: '404',
+    path: '/404',
+    hide: true
   }
 ]

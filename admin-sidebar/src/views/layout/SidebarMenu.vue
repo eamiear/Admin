@@ -66,7 +66,7 @@ export default {
               id: menuNav.id,
               name: route.name,
               title: menuNav.name,
-              type: route.meta.type,
+              static: route.meta.static,
               path: menuNav.path,
               query: route.query,
               params: route.params

@@ -2,7 +2,7 @@
  * @Author: eamiear
  * @Date: 2019-02-06 20:47:55
  * @Last Modified by: eamiear
- * @Last Modified time: 2019-02-25 11:35:10
+ * @Last Modified time: 2019-02-25 21:54:28
  */
 
 // 商铺
@@ -11,7 +11,7 @@ const shops = [{
   path: '/operator/shops/projectList.html',
   desc: '项目列表',
   component: () => import('views/operator/shops/projectList.vue'),
-  meta: {isTab: true}
+  meta: {isTab: true, static: true}
 }, {
   name: '/operator/shops/list.html',
   path: '/operator/shops/list.html',

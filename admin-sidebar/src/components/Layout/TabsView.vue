@@ -4,8 +4,8 @@
       class="tabs-wrapper"
       v-model="tabActiveName">
       <el-tab-pane
-        v-for="(tab, index) in tabsNavList"
-        :key="index"
+        v-for="tab in tabsNavList"
+        :key="tab.name"
         :name="tab.name">
 
         <el-tag
@@ -20,7 +20,8 @@
 
         <article :style="contentViewStyles(tab)" class="tabs-container-content">
           <iframe
-            v-if="tab.type === 'iframe'"
+            :id="`tab_${tab.id}`"
+            v-if="tab.static"
             :src="tab.path"
             width="100%" height="100%" frameborder="0" scrolling="yes">
           </iframe>
@@ -106,7 +107,7 @@ export default {
     },
     closeTabsActive (v) {
       const tabName = v || this.tabActiveName
-      this.$store.dispatch('delTabsNavList', tabName).then(tabs => {
+      return this.$store.dispatch('delTabsNavList', tabName).then(tabs => {
         if (this.isTabActive(tabName)) {
           const latestView = tabs.slice(-1)[0]
           latestView && this.$router.push(latestView, () => {
@@ -126,9 +127,8 @@ export default {
     },
     refreshTabsActive () {
       const tempTabName = this.tabActiveName
-      this.closeTabsActive(tempTabName)
-      this.$nextTick(() => {
-        this.$router.push({name: tempTabName})
+      this.closeTabsActive(tempTabName).then(() => {
+        this.$router.push({path: tempTabName})
       })
     },
     clearTabs () {
