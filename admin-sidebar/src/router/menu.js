@@ -53,30 +53,37 @@ export const sidebartMenus = [
   {
     id: 2,
     name: '系统主题',
+    icon: 'circle-o',
     path: '/system/theme.html'
   }, {
     id: 3,
     name: '商铺库',
+    icon: 'circle-o',
     path: '/merchant/store/list.html'
   }, {
     id: 4,
     name: '品牌库',
+    icon: 'cogs',
     path: '/merchant/brand/list.html'
   }, {
     id: 5,
     name: '发布品牌',
+    icon: 'list',
     path: '/merchant/brand/publish.html'
   }, {
     id: 6,
     name: '个人中心',
+    icon: 'user',
     path: '/operator/usercenter/password.html'
   }, {
     id: 7,
     name: '发布商铺',
+    icon: 'list',
     path: '/operator/shops/projectList.html'
   }, {
     id: 8,
     name: '配置信息',
+    icon: 'cogs',
     children: [
       {
         id: 9,

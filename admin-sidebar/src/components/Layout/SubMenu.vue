@@ -3,6 +3,7 @@
     v-if="!menus.hide && menus.children && menus.children.length > 0"
     :index="menus.id + ''">
     <template slot="title">
+      <ura-icon v-if="menus.icon" :name="menus.icon"></ura-icon>
       <span slot="title" class="el-menu-item-title">{{menus.name}}</span>
     </template>
     <sub-menu
@@ -15,12 +16,14 @@
     :index="menus.id + ''"
     v-else-if="!menus.hide && (!menus.children || (menus.children && menus.children.length === 0))"
     @click="menuEvent(menus.path, $route)">
+    <ura-icon v-if="menus.icon" :name="menus.icon"></ura-icon>
     <span slot="title" class="el-menu-item-title">{{menus.name}}</span>
   </el-menu-item>
 </template>
 
 <script>
 import SubMenu from './SubMenu.vue'
+import UraIcon from '@/assets/package/icon'
 export default {
   name: 'SubMenu',
   props: {
@@ -30,11 +33,9 @@ export default {
       default: () => {}
     }
   },
-  components: { SubMenu },
+  components: { SubMenu, UraIcon },
   computed: {
-    timestamp () {
-      return Date.now() + ''
-    }
+
   },
   methods: {
 

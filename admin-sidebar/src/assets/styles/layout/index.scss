@@ -54,6 +54,12 @@
   .app-sidebar{
     width: $sidebar-contarct-width;
   }
+  .el-menu-item,
+  .el-submenu > .el-submenu__title{
+    i.fa{
+      font-size: 20px;
+    }
+  }
   .app-body{
     margin-left: $sidebar-contarct-width;
   }

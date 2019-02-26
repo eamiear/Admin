@@ -35,6 +35,16 @@
       background-color: $sidebar-deep-submenu-background-color;
     }
   }
+  .el-menu--vertical{
+    .el-menu.el-menu--popup .el-menu-item{
+      color: $sidebar-menu-item-color;
+      background-color: $sidebar-deep-submenu-background-color;
+      &:hover, &:focus{
+        color: $sidebar-menu-item-active-color;
+        background-color: $sidebar-menu-background-hover-color;
+      }
+    }
+  }
   .app-body{
 
   }

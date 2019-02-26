@@ -4,6 +4,7 @@
     :mode="menuMode"
     unique-opened
     :collapse="isCollapse"
+    :collapse-transition="transition"
     :default-active="menuActive">
     <sub-menu
       v-for="menu in menuList"
