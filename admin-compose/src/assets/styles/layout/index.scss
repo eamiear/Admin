@@ -2,10 +2,20 @@
   @include clearfix;
   position: relative;
   overflow: hidden;
+}
+.app-sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $sidebar-width;
+  height: 100%;
+  overflow: hidden;
+}
 
-  .el-menu.sidebar-menu{
-    margin-right: 110px;
-  }
+@import './sidebar.scss';
+
+.app-body{
+  margin-left: $sidebar-width;
 }
 .app-header {
   background-color: #fff;
@@ -23,8 +33,34 @@
    position: relative;
    overflow-x: hidden;
    overflow-y: auto;
-
-   .app-container{
-     padding: 10px;
-   }
+  //  .app-container{
+  //    padding: 10px;
+  //  }
  }
+
+ @import './tabs-view.scss';
+
+ // tansition
+.app-sidebar,
+.app-body{
+  @include transition(width $transition-speed $transition-fn, margin-left $transition-speed $transition-fn);
+}
+
+// collapse
+.app-sidebar--collapse{
+  .el-menu--collapse{
+    width: inherit;
+  }
+  .app-sidebar{
+    width: $sidebar-contarct-width;
+  }
+  .el-menu-item,
+  .el-submenu > .el-submenu__title{
+    i.fa{
+      font-size: 20px;
+    }
+  }
+  .app-body{
+    margin-left: $sidebar-contarct-width;
+  }
+}

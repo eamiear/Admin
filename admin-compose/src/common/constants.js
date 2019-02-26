@@ -8,6 +8,8 @@ export const PAGINATION_PAGENO = 1
 export const PAGINATION_PAGESIZE = 50
 export const PAGINATION_PAGETOTAL = 0
 
+export const DASHBOARD_HOME = '/dashboard'
+
 //
 export const INTERFACE_VERSION = '1.0'
 export const SESSION_REQUEST = 'account.session.gen'

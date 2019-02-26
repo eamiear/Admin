@@ -1,14 +1,27 @@
 <template>
-  <section class="app-wrapper">
-    <navbar class="app-header"></navbar>
-    <article class="app-main" :style="appMainStyles">
-      <router-view/>
-    </article>
+  <section class="app-wrapper" :class="sidebarCollapseClass">
+    <aside class="app-sidebar">
+      <brand></brand>
+      <sidebar-menu></sidebar-menu>
+    </aside>
+    <section class="app-body" :style="appBodyStyles">
+      <navbar class="app-header"></navbar>
+      <article class="app-main"  v-if="!isTabView" :style="appMainStyles">
+        <keep-alive v-if="isKeepAlive">
+           <router-view/>
+        </keep-alive>
+         <router-view v-else/>
+      </article>
+      <tabs-view class="app-main" v-else/>
+    </section>
   </section>
 </template>
 
 <script>
+import Brand from '@/views/layout/Brand.vue'
+import SidebarMenu from '@/views/layout/SidebarMenu.vue'
 import Navbar from '@/views/layout/Navbar.vue'
+import TabsView from '@/components/Layout/TabsView.vue'
 import {
   mapGetters
 } from 'vuex'
@@ -16,7 +29,10 @@ import {
 export default {
   name: 'layout',
   components: {
-    Navbar
+    Brand,
+    SidebarMenu,
+    Navbar,
+    TabsView
   },
   created () {
     // this.getUserInfo()
@@ -29,8 +45,20 @@ export default {
   },
   computed: {
     ...mapGetters([
+      'sidebarCollapse',
       'documentClientHeight'
     ]),
+    sidebarCollapseClass () {
+      return {
+        'app-sidebar--collapse': this.sidebarCollapse
+      }
+    },
+    appWrapperStyles () {
+      return {}
+    },
+    appBodyStyles () {
+      return [{ 'minHeight': `${this.documentClientHeight}px` }, { 'height': `${this.documentClientHeight}px` }]
+    },
     appMainStyles () {
       let height = this.documentClientHeight
       height -= 50 // navbar
@@ -39,6 +67,12 @@ export default {
       }, {
         'height': `${height}px`
       }]
+    },
+    isTabView () {
+      return this.$route.meta && this.$route.meta.isTab
+    },
+    isKeepAlive () {
+      return this.$route.meta && this.$route.meta.isKeepAlive
     }
   },
   methods: {
