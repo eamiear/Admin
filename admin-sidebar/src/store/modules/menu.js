@@ -39,8 +39,13 @@ const menu = {
   actions: {
     generateSidebarMenu ({ commit }) {
       return new Promise(resolve => {
-        commit('SET_SIDEBAR_MENU_LIST', sidebartMenus)
-        resolve(sidebartMenus)
+        store.dispatch('getUserInfo').then(userInfo => {
+          userInfo.type = 1
+          commit('SET_SIDEBAR_MENU_LIST', sidebartMenus)
+          resolve(userInfo)
+        }).catch(() => {
+          commit('SET_SIDEBAR_MENU_LIST', [])
+        })
       })
     },
     generateNavibarMenu ({ commit }) {
