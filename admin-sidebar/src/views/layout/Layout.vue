@@ -14,7 +14,6 @@
       </article>
       <tabs-view class="app-main" v-else/>
     </section>
-
   </section>
 </template>
 

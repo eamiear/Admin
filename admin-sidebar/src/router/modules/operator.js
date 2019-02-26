@@ -2,15 +2,16 @@
  * @Author: eamiear
  * @Date: 2019-02-06 20:47:55
  * @Last Modified by: eamiear
- * @Last Modified time: 2019-02-25 21:54:28
+ * @Last Modified time: 2019-02-25 22:36:06
  */
 
 // 商铺
 const shops = [{
   name: '/operator/shops/projectList.html',
-  path: '/operator/shops/projectList.html',
+  // path: '/operator/shops/projectList.html',
+  path: '//www.baidu.com',
   desc: '项目列表',
-  component: () => import('views/operator/shops/projectList.vue'),
+  // component: () => import('views/operator/shops/projectList.vue'),
   meta: {isTab: true, static: true}
 }, {
   name: '/operator/shops/list.html',
