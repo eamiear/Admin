@@ -27,18 +27,30 @@
 /*
  * Content Wrapper - contains the main content
  */
+.app-body{
+  .app-main{
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+.app-main{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+//  .app-container{
+//    padding: 10px;
+//  }
 
- .app-main{
-   width: 100%;
-   position: relative;
-   overflow-x: hidden;
-   overflow-y: auto;
-  //  .app-container{
-  //    padding: 10px;
-  //  }
- }
+  .app-sidebar{
+    top: $navbar-height;
+  }
+  .app-main{
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
 
- @import './tabs-view.scss';
+@import './tabs-view.scss';
 
  // tansition
 .app-sidebar,

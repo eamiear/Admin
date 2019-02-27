@@ -3,6 +3,10 @@ $app-background-color: #ecf0f5;
 $theme-base-background-color: #222d32;
 $theme-base-text-color: rgb(197, 192, 192);
 
+//
+$app-header-background-color: $theme-base-background-color;
+$app-header-color: $theme-base-text-color;
+
 // brand color variable
 $brand-color: lighten($theme-base-text-color, 5%);
 $brand-background-color: $theme-base-background-color;
@@ -30,6 +34,7 @@ $sidebar-menu-background-hover-color: lighten($sidebar-menu-background-color, 10
 $sidebar-menu-background-active-color: $sidebar-menu-background-hover-color;
 $sidebar-menu-item-color: rgb(197, 192, 192);
 $sidebar-menu-item-active-color: lighten($sidebar-menu-item-color, 50%);
+$sidebar-nest-menu-border-color: darken($sidebar-menu-background-color, 60%);
 $hover-menu__color: #fff;
 $hover-menu__background-color: #1e282c;
 $hover-menu__border-left-color: #3c8dbc;
