@@ -35,7 +35,7 @@ export default {
     TabsView
   },
   created () {
-    // this.getUserInfo()
+    this.getUserInfo()
   },
   mounted () {
     this.resetDocumentClientHeight()

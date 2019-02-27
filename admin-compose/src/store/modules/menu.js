@@ -6,10 +6,8 @@ import {
   UPDATE_SIDEBAR_MENU_ACTIVE_NAME
 } from '../mutation-types'
 
-// import Storage from '@/common/cache'
-// import SysMenuAPI from '@/api/menu'
-import { operatorMenus, merchantMenus, systemtMenus, sidebartMenus } from '@/router/menu'
-import store from '@/store'
+import Storage from '@/common/cache'
+import SysMenuAPI from '@/api/system'
 
 const menu = {
   state: {
@@ -39,30 +37,38 @@ const menu = {
   actions: {
     generateSidebarMenu ({ commit }) {
       return new Promise(resolve => {
-        store.dispatch('getUserInfo').then(userInfo => {
-          userInfo.type = 1
-          commit('SET_SIDEBAR_MENU_LIST', sidebartMenus)
-          resolve(userInfo)
-        }).catch(() => {
-          commit('SET_SIDEBAR_MENU_LIST', [])
+        SysMenuAPI.getSidebarMenus(Storage.get('uid')).then(res => {
+          if (res.code === 0) {
+            commit('SET_SIDEBAR_MENU_LIST', res.data.menus)
+            resolve(res.data.menus)
+          } else {
+            commit('SET_SIDEBAR_MENU_LIST', [])
+          }
         })
       })
     },
     generateNavibarMenu ({ commit }) {
       return new Promise(resolve => {
-        store.dispatch('getUserInfo').then(userInfo => {
-          userInfo.type = 1
-          commit('SET_MENU_NAV_LIST', userInfo.type === 1 ? merchantMenus : operatorMenus)
-          resolve(userInfo)
-        }).catch(() => {
-          commit('SET_MENU_NAV_LIST', [])
+        SysMenuAPI.getNavMenus(Storage.get('uid')).then(res => {
+          if (res.code === 0) {
+            commit('SET_MENU_NAV_LIST', res.data.menus)
+            resolve(res.data.menus)
+          } else {
+            commit('SET_MENU_NAV_LIST', [])
+          }
         })
       })
     },
-    generatesystemMenu ({ commit }) {
+    generateSystemMenu ({ commit }) {
       return new Promise(resolve => {
-        commit('SET_SYS_MENU_LIST', systemtMenus)
-        resolve(systemtMenus)
+        SysMenuAPI.getSysMenus(Storage.get('uid')).then(res => {
+          if (res.code === 0) {
+            commit('SET_SYS_MENU_LIST', res.data.menus)
+            resolve(res.data.menus)
+          } else {
+            commit('SET_SYS_MENU_LIST', [])
+          }
+        })
       })
     },
     updateMenuNavActiveName ({ commit }, activeName) {

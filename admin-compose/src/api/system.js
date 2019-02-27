@@ -2,7 +2,7 @@
  * @Author: eamiear
  * @Date: 2019-02-06 21:34:24
  * @Last Modified by: eamiear
- * @Last Modified time: 2019-02-19 10:36:55
+ * @Last Modified time: 2019-02-27 10:24:39
  */
 
 import request from '@/common/fetch'
@@ -50,6 +50,24 @@ const SystemAPI = {
     return request.post({
       url: 'qiniu/url',
       params: {key}
+    })
+  },
+  getSidebarMenus (uid) {
+    return request.post({
+      url: 'sys/menu',
+      params: {uid}
+    })
+  },
+  getNavMenus (uid) {
+    return request.post({
+      url: 'sys/nav',
+      params: {uid}
+    })
+  },
+  getSysMenus (uid) {
+    return request.post({
+      url: 'sys/setting',
+      params: {uid}
     })
   }
 }
