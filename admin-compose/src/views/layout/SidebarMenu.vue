@@ -37,9 +37,9 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch('generateSidebarMenu').then(() => {
-      this.routerHandler(this.$route)
-    })
+    // this.$store.dispatch('generateSidebarMenu').then(() => {
+    //   this.routerHandler(this.$route)
+    // })
   },
   watch: {
     $route: 'routerHandler'

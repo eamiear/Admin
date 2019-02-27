@@ -1,6 +1,6 @@
 <template>
   <div>
-Hello World
+    系统控制面板
   </div>
 </template>
 

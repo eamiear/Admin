@@ -1,5 +1,6 @@
 <template>
   <section>
+    <ura-brand></ura-brand>
     <nav class="navbar navbar-static-top is-dialog">
       <div class="navbar-custom-menu">
         <el-dropdown trigger="click" class="uv-user-menu" @command="handleCommand">
@@ -18,8 +19,8 @@
         </el-dropdown>
       </div>
 
-      <!-- <ura-nav-menu class="navbar-menu-nav"></ura-nav-menu> -->
-      <ura-toggle :collapse="collapseSidebar" :isActive="sidebarCollapse"></ura-toggle>
+      <ura-nav-menu class="navbar-menu-nav"></ura-nav-menu>
+
       <el-dialog title="重设密码" width="40%" :visible.sync="passwordModelVisible" :close-on-click-modal="false">
         <el-form autoComplete="on" :rules="passwordModelRules" :model="passwordModel"  ref="passwordRef" label-position="right" label-width="18%">
           <el-form-item label="旧密码:" prop="oldPassword">
@@ -45,7 +46,8 @@
 </template>
 
 <script>
-import UraToggle from '@/components/Layout/Toggle.vue'
+import UraBrand from '@/views/layout/Brand.vue'
+import UraNavMenu from '@/views/layout/NavMenu.vue'
 import { mapGetters } from 'vuex'
 import SystemAPI from '@/api/system'
 export default {
@@ -80,7 +82,7 @@ export default {
       }
     }
   },
-  components: { UraToggle },
+  components: { UraBrand, UraNavMenu },
   computed: {
     ...mapGetters([
       'sidebar',

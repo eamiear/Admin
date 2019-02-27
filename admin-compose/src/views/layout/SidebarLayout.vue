@@ -1,15 +1,9 @@
 <template>
-  <section class="app-wrapper">
-    <navbar class="app-header"></navbar>
-    <article class="app-main" :style="appMainStyles">
-      <router-view/>
-    </article>
-    <!-- <aside class="app-sidebar">
-      <brand></brand>
+  <section>
+    <aside class="app-sidebar">
       <sidebar-menu></sidebar-menu>
     </aside>
     <section class="app-body" :style="appBodyStyles">
-      <navbar class="app-header"></navbar>
       <article class="app-main"  v-if="!isTabView" :style="appMainStyles">
         <keep-alive v-if="isKeepAlive">
            <router-view/>
@@ -17,15 +11,13 @@
          <router-view v-else/>
       </article>
       <tabs-view class="app-main" v-else/>
-    </section> -->
+    </section>
   </section>
 </template>
 
 <script>
-// import Brand from '@/views/layout/Brand.vue'
-// import SidebarMenu from '@/views/layout/SidebarMenu.vue'
-import Navbar from '@/views/layout/Navbar.vue'
-// import TabsView from '@/components/Layout/TabsView.vue'
+import SidebarMenu from '@/views/layout/SidebarMenu.vue'
+import TabsView from '@/components/Layout/TabsView.vue'
 import {
   mapGetters
 } from 'vuex'
@@ -33,14 +25,11 @@ import {
 export default {
   name: 'layout',
   components: {
-    // Brand,
-    // SidebarMenu,
-    Navbar,
-    // TabsView
+    SidebarMenu,
+    TabsView
   },
   created () {
-    this.getUserInfo()
-    this.getNavMenu()
+    this.getNavSubMenus()
   },
   mounted () {
     this.resetDocumentClientHeight()
@@ -50,23 +39,13 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'sidebarCollapse',
       'documentClientHeight'
     ]),
-    sidebarCollapseClass () {
-      return {
-        'app-sidebar--collapse': this.sidebarCollapse
-      }
-    },
-    appWrapperStyles () {
-      return {}
-    },
     appBodyStyles () {
       return [{ 'minHeight': `${this.documentClientHeight}px` }, { 'height': `${this.documentClientHeight}px` }]
     },
     appMainStyles () {
-      let height = this.documentClientHeight
-      height -= 50 // navbar
+      const height = this.documentClientHeight
       return [{
         'minHeight': `${height}px`
       }, {
@@ -84,11 +63,8 @@ export default {
     resetDocumentClientHeight () {
       this.$store.dispatch('updateDocumentClientHeight', document.documentElement.clientHeight)
     },
-    getUserInfo () {
-      this.$store.dispatch('getUserInfo')
-    },
-    getNavMenu () {
-      this.$store.dispatch('generateNavibarMenu')
+    getNavSubMenus () {
+      this.$store.dispatch('generateNavSubMenu')
     }
   }
 }
