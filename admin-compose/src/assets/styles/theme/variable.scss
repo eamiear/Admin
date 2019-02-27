@@ -4,7 +4,7 @@ $theme-base-background-color: #222d32;
 $theme-base-text-color: rgb(197, 192, 192);
 
 // brand color variable
-$brand-color: lighten($theme-base-text-color, 30%);
+$brand-color: lighten($theme-base-text-color, 5%);
 $brand-background-color: $theme-base-background-color;
 $brand-box-shadow-color: darken($theme-base-background-color, 25%);
 $brand-background-color-hover: #1E2C34;
