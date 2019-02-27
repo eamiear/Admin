@@ -2,11 +2,11 @@
  * @Author: eamiear
  * @Date: 2019-02-06 18:06:02
  * @Last Modified by: eamiear
- * @Last Modified time: 2019-02-26 09:36:58
+ * @Last Modified time: 2019-02-27 15:13:43
  */
 
 import common from './common'
-import operator from './operator'
+import operator, { usercenter } from './operator'
 import merchants from './merchants'
 import system from './system'
 const menuRoutes = {
@@ -23,6 +23,7 @@ const menuRoutes = {
     meta: {isTab: true}
   },
   ...operator,
+  ...usercenter,
   ...merchants,
   ...system,
   ...common

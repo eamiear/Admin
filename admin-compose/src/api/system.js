@@ -2,7 +2,7 @@
  * @Author: eamiear
  * @Date: 2019-02-06 21:34:24
  * @Last Modified by: eamiear
- * @Last Modified time: 2019-02-27 10:24:39
+ * @Last Modified time: 2019-02-27 15:09:44
  */
 
 import request from '@/common/fetch'
@@ -61,6 +61,12 @@ const SystemAPI = {
   getNavMenus (uid) {
     return request.post({
       url: 'sys/nav',
+      params: {uid}
+    })
+  },
+  getNavSubMenus (uid) {
+    return request.post({
+      url: 'sys/nav/sub',
       params: {uid}
     })
   },

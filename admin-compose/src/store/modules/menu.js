@@ -47,6 +47,18 @@ const menu = {
         })
       })
     },
+    generateNavSubMenu ({ commit }) {
+      return new Promise(resolve => {
+        SysMenuAPI.getNavSubMenus(Storage.get('uid')).then(res => {
+          if (res.code === 0) {
+            commit('SET_SIDEBAR_MENU_LIST', res.data.menus)
+            resolve(res.data.menus)
+          } else {
+            commit('SET_SIDEBAR_MENU_LIST', [])
+          }
+        })
+      })
+    },
     generateNavibarMenu ({ commit }) {
       return new Promise(resolve => {
         SysMenuAPI.getNavMenus(Storage.get('uid')).then(res => {

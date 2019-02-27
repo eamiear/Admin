@@ -2,17 +2,18 @@
  * @Author: eamiear
  * @Date: 2019-02-06 21:24:22
  * @Last Modified by: eamiear
- * @Last Modified time: 2019-02-25 11:34:56
+ * @Last Modified time: 2019-02-27 15:15:09
  */
 
 export default [
+  // {
+  //   name: '/merchant/store/list.html',
+  //   path: '/merchant/store/list.html',
+  //   desc: '商铺库',
+  //   component: () => import('views/merchant/store/list.vue'),
+  //   meta: {isTab: true}
+  // },
   {
-    name: '/merchant/store/list.html',
-    path: '/merchant/store/list.html',
-    desc: '商铺库',
-    component: () => import('views/merchant/store/list.vue'),
-    meta: {isTab: true}
-  }, {
     name: '/merchant/brand/list.html',
     path: '/merchant/brand/list.html',
     desc: '品牌库',
