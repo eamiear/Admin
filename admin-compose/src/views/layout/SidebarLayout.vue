@@ -29,7 +29,7 @@ export default {
     TabsView
   },
   created () {
-    this.getNavSubMenus()
+    // this.getNavSubMenus()
   },
   mounted () {
     this.resetDocumentClientHeight()
